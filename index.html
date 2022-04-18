@@ -26,3 +26,125 @@ var meaningOfLife = clare;
 
 console.log("The name is " + fullName);
 console.log("The meaning of life is " + meaningOfLife);
+
+var rank = "Commander";
+switch(rank)
+{
+    case "Private":
+    case "Sergeant":
+        console.log("You are not authorized.");
+        break;
+    case "Commander":
+        console.log("Hello commander! what can I do for you today?");
+        break;
+    case "Captain":
+console.log("Hello captain! I will do anything you wish.");
+        break;
+    default:
+        console.log("I don't know what your rank is.");
+        break;
+}
+var i = 99;
+while (i > 0)
+{
+    console.log(i + " basketball");
+    i -= 1;
+}
+
+confirm("Hi!");
+prompt("Bye!");
+alert("Hello");
+
+setTimeout(function() {
+    console.log("Done!");
+}, 5000);
+
+let numbers = [3, 5, 8, 9, 2];
+
+// Old way
+function multiplyByTwo(number){
+    return number * 2;
+}
+
+let multipliedNumbers = numbers.map(multiplyByTwo);
+
+console.log(multipliedNumbers);              // prints out: 6, 10, 16, 18, 4
+
+// Using ES6 arrow functions
+const multiplyByTwo = number => number * 2;
+
+let multipliedNumbers = numbers.map(multiplyByTwo);
+
+console.log(multipliedNumbers);              // prints out: 6, 10, 16, 18, 4
+
+function sumAsync(x, y) {
+    return new Promise((resolve, reject) => {
+        // run this in 500ms from now
+        setTimeout(() => {
+            if (x < 0 || y < 0) {
+                reject("Negative values received");
+            } else {
+                resolve(x + y);
+            }
+        }, 500);
+
+        // we don't need to return anything
+    });
+}
+
+sumAsync(-5, 7).then((result) => {
+    console.log("The result of the addition is:", result);
+}).catch((error) => {
+    console.log("Error received:", error);
+});
+
+function Person(firstName, lastName) {
+    // construct the object using the arguments
+    this.firstName = firstName;
+    this.lastName = lastName;
+
+    // a method which returns the full name
+    this.fullName = function() {
+        return this.firstName + " " + this.lastName;
+    }
+}
+
+var myPerson = new Person("John", "Smith");
+console.log(myPerson.fullName());            // outputs "John Smith"
+
+var boundPrintName = printName.bind(person); //is the same as
+var boundPrintName = function()
+{
+    printName.call(person);
+}
+unction Person(name, age)
+{
+    this.name = name;
+    this.age = age;
+
+    function describe()
+    {
+        return this.name + ", " + this.age + " years old.";
+    }
+}// Deep destructuring
+let computer = {
+    processor: {
+        transistor: {
+            silicon: {
+                thickness: '9nm'
+            }
+        }
+    }
+}
+
+let {
+    processor: 
+        { 
+            transistor: { 
+                silicon: { 
+                    thickness 
+                }
+            }
+        } 
+} = computer;
+
